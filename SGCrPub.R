@@ -85,7 +85,11 @@ print(SGCrCl3)
 GlmmResFAIASN <-lmer(ResidCre ~ 0 + AgeSexAbb3 + FAINu3 + (1 | OuID3), data = SGCrCl3)
 summary(GlmmResFAIASN)
 
-#R2 for model (2 wayS to find)
+#to get F values
+anova(GlmmResFAIASN)
+
+#R2 for model (3 ways to find, diff R2 values)
+r.squaredLR(GlmmResFAIASN)
 r.squaredGLMM(GlmmResFAIASN) #requires MuMIn package
 rsq(GlmmResFAIASN)  #requires rsq package
 
@@ -109,7 +113,11 @@ GlmmResFAIASc <-lmer(ResidCre ~ 0 + AgeSexAbb3 + FAI3 + (1 | OuID3), data = SGCr
 summary(GlmmResFAIASc)
 print(GlmmResFAIAsc)
 
-#R2 for model (2 ways to find)
+anova(GlmmResFAIASc)
+
+
+#R2 for model (3 ways to find, diff R2 values)
+r.squaredLR(GlmmResFAIASc)
 r.squaredGLMM(GlmmResFAIASc) #requires MuMIn package
 rsq(GlmmResFAIASc)  #requires rsq package
 
